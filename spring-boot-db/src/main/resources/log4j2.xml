@@ -5,8 +5,8 @@
 <configuration status="INFO" monitorInterval="30">
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%15.15t] %-40.40logger{39} : %X{trackingID} %m%n</Property>
-        <Property name="LOG_PATH">./spring-boot-web/logs</Property>
-        <Property name="LOG_NAME">web</Property>
+        <Property name="LOG_PATH">./spring-boot-db/logs</Property>
+        <Property name="LOG_NAME">db</Property>
     </Properties>
     <!--先定义所有的appender-->
     <appenders>

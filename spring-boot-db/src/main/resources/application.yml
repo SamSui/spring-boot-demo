@@ -1,1 +1,5 @@
-
+spring:
+  application:
+    name: db
+logging:
+  config: classpath:log4j2.xml
