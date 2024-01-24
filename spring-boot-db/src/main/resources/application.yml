@@ -3,3 +3,11 @@ spring:
     name: db
 logging:
   config: classpath:log4j2.xml
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES # 算法，这里使用默认的。
+    password: chengxuyuanjidian # 盐，和测试类的一样。
+    property:
+      prefix: ENC(
+      suffix: )
