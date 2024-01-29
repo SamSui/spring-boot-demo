@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: neo4j
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      password: 12345678
+      username: neo4j
+  data:
+    neo4j:
+      database: neo4j
+
+
+logging:
+  config: classpath:log4j2.xml
+
