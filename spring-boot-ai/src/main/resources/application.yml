@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres
+    username: postgres
+    password: postgres
+#    url: jdbc:mysql://localhost:3306/dcdb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+#    username: root
+#    password: 123456
+  ai:
+#    ollama:
+      ## ????????
+#      base-url: http://localhost:11434
+#      chat:
+#        model: gemma:2b
+    openai:
+      base-url: https://api.openai.com
+      api-key: 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

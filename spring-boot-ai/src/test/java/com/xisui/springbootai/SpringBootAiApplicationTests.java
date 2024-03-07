@@ -1,10 +1,10 @@
-package com.xisui.springbootdb;
+package com.xisui.springbootai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootNeo4jApplicationTests {
+class SpringBootAiApplicationTests {
 
     @Test
     void contextLoads() {

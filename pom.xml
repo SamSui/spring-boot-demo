@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.3</version>
     </parent>
 
     <groupId>com.xisui</groupId>
@@ -17,6 +17,8 @@
         <module>spring-boot-web</module>
         <module>spring-boot-db</module>
         <module>spring-boot-neo4j</module>
+        <module>spring-boot-test</module>
+        <module>spring-boot-ai</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -30,6 +32,7 @@
         <app.profiles>local,dev</app.profiles>
         <it.skip>true</it.skip>
         <main.class>com.xisui.springbootweb.SpringBootWebApplication</main.class>
+        <spring-ai.version>0.8.0</spring-ai.version>
     </properties>
 
     <dependencies>
@@ -113,7 +116,17 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <repositories>
         <repository>
             <id>public</id>
@@ -122,6 +135,14 @@
             <releases>
                 <enabled>true</enabled>
             </releases>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
