@@ -49,7 +49,7 @@ public class OpenAIApiTest {
     }
     public static void testPost(){
         // 设置 OpenAI API 的密钥
-        String apiKey = "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";
+        String apiKey = "xxxx";
 
         // 设置请求 URL
         String apiUrl = "https://api.openai.com/v1/completions";

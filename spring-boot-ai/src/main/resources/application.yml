@@ -16,4 +16,4 @@ spring:
 #        model: gemma:2b
     openai:
       base-url: https://api.openai.com
-      api-key: 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
+      api-key: <api-key>

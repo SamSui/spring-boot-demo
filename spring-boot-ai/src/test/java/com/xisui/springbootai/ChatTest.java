@@ -74,7 +74,7 @@ class ChatTest {
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort));
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection(proxy);
-            connection.setRequestProperty("Authorization", "Bearer " + "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");
+            connection.setRequestProperty("Authorization", "Bearer " + "xxxx");
             connection.setRequestProperty("Content-Type", "application/json");
 
             //connection.setRequestMethod("POST");
