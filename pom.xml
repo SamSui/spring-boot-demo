@@ -19,6 +19,7 @@
         <module>spring-boot-neo4j</module>
         <module>spring-boot-test</module>
         <module>spring-boot-ai</module>
+        <module>spring-boot-batch</module>
     </modules>
 
     <packaging>pom</packaging>

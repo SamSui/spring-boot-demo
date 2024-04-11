@@ -13,7 +13,7 @@
     <description>spring-boot-ai</description>
     <properties>
         <java.version>17</java.version>
-        <main.class>com.xisui.springbootai.SpringBootAiApplication</main.class>
+        <main.class>com.xisui.springbootbatch.SpringBootBatchApplication</main.class>
     </properties>
     <dependencies>
         <dependency>

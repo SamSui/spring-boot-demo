@@ -2,4 +2,6 @@ spring:
   application:
     name: web
 logging:
+  level:
+    root: debug
   config: classpath:log4j2.xml
