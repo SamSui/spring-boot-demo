@@ -15,21 +15,22 @@ spring:
       connectionTimeout: 30000
       connectionTestQuery: SELECT 1
 ---
-spring:
-  jpa:
-    generateDdl: false
-    hibernate:
-      ddlAuto: update
-    openInView: true
-    show-sql: true
+#spring:
+#  jpa:
+#    generateDdl: true
+#    hibernate:
+#      ddlAuto: update
+#    openInView: true
+#    show-sql: true
 ---
 spring:
   batch:
     job:
       enabled: false #是否自动执行任务
     jdbc:
-      schema: classpath:org/springframework/batch/core/schema-mysql.sql #目前不能init db 的ddl
+      schema: classpath:org/springframework/batch/core/schema-mysql.sql
       initialize-schema: always
-
+---
 logging:
   config: classpath:log4j2.xml
+debug: true

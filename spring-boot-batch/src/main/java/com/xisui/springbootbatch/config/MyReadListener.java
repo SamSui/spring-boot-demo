@@ -1,12 +1,13 @@
 package com.xisui.springbootbatch.config;
 
+import com.xisui.springbootbatch.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.ItemReadListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MyReadListener implements ItemReadListener<String> {
+public class MyReadListener implements ItemReadListener<User> {
 
   private Logger logger = LoggerFactory.getLogger(MyReadListener.class);
 
@@ -15,7 +16,7 @@ public class MyReadListener implements ItemReadListener<String> {
   }
 
   @Override
-  public void afterRead(String item) {
+  public void afterRead(User item) {
     System.out.println("reader after: " + Thread.currentThread().getName()) ;
   }
 
