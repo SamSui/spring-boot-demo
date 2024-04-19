@@ -25,15 +25,15 @@ public class SpringBootWebApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        context.registerBean("replacementSavePerson", ReplacementSavePerson.class) ;
-        context.registerBean(PersonService.class, bd -> {
-            if (bd instanceof RootBeanDefinition root) {
-                 //参数savePerson, 指明要替换的方法
-                 //replacementSavePerson, 指明要使用容器中哪个Bean来替换
-                ReplaceOverride replace = new ReplaceOverride("savePerson", "replacementSavePerson") ;
-                replace.addTypeIdentifier("String");
-                root.getMethodOverrides().addOverride(replace) ;
-            }
-        }) ;
+        //context.registerBean("replacementSavePerson", ReplacementSavePerson.class) ;
+        //context.registerBean(PersonService.class, bd -> {
+        //    if (bd instanceof RootBeanDefinition root) {
+        //         //参数savePerson, 指明要替换的方法
+        //         //replacementSavePerson, 指明要使用容器中哪个Bean来替换
+        //        ReplaceOverride replace = new ReplaceOverride("savePerson", "replacementSavePerson") ;
+        //        replace.addTypeIdentifier("String");
+        //        root.getMethodOverrides().addOverride(replace) ;
+        //    }
+        //}) ;
     }
 }
