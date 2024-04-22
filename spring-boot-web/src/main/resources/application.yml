@@ -5,3 +5,47 @@ logging:
   level:
     root: debug
   config: classpath:log4j2.xml
+
+server:
+  port: 8088
+---
+management:
+  endpoints:
+    web:
+      base-path: /ac
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+---
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+        # 这里不配置server端会报错，未知的主机错误
+        instance:
+          service-url: http://localhost:8088
+  jmx:
+    enabled: true
+---
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+      roles:
+        - USER
+        - MGR
+---
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+        instance:
+          service-url: http://localhost:8088
+        username: admin
+        password: admin123
+---
