@@ -12,7 +12,7 @@ server:
 management:
   endpoints:
     web:
-      base-path: /ac
+#      base-path: /ac
       exposure:
         include: '*'
   info:

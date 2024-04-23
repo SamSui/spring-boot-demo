@@ -34,3 +34,12 @@ spring:
 logging:
   config: classpath:log4j2.xml
 debug: true
+---
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+      roles:
+        - USER
+        - MGR
