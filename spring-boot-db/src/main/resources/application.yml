@@ -3,6 +3,41 @@ spring:
     name: db
 logging:
   config: classpath:log4j2.xml
+---
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/batchdb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimumIdle: 10
+      maximumPoolSize: 200
+      autoCommit: true
+      idleTimeout: 30000
+      poolName: MasterDatabookHikariCP
+      maxLifetime: 1800000
+      connectionTimeout: 30000
+      connectionTestQuery: SELECT 1
+
+# MyBatis配置
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+    banner: false
+
+#  config-location: classpath:mybatis/mybatis-config.xml
+mybatis:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis/mybatis-config.xml
 
 jasypt:
   encryptor:
@@ -11,3 +46,4 @@ jasypt:
     property:
       prefix: ENC(
       suffix: )
+debug: true
