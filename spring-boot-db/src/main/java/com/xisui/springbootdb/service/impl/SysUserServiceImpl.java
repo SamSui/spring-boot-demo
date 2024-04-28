@@ -5,9 +5,13 @@ import com.xisui.springbootdb.domain.SysUser;
 import com.xisui.springbootdb.mapper.SysUserMapper;
 import com.xisui.springbootdb.service.SysUserService;
 import jakarta.annotation.Resource;
+import org.apache.ibatis.session.SqlSession;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -19,10 +23,15 @@ import java.util.concurrent.Future;
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements SysUserService {
     @Resource
     private SysUserMapper sysUserMapper;
+    @Resource
+    private SqlSessionTemplate sqlSessionTemplate;
 
-    @Transactional(rollbackFor = Exception.class)
-    public void testBatch(){
+    //@Transactional(rollbackFor = Exception.class)
+    public void testBatch() throws SQLException {
+        SqlSession sqlSession = sqlSessionTemplate.getSqlSessionFactory().openSession();
+        Connection con = sqlSession.getConnection();
         try {
+            con.setAutoCommit(false);
             ExecutorService service = Executors.newFixedThreadPool(5);
             List<Callable<Integer>> callableList  = new ArrayList<>();
             List<SysUser> lists = new ArrayList<>();
@@ -36,7 +45,7 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
             for (int i =0;i<lists.size();i++){
                 int finalI = i;
                 Callable<Integer> callable = () -> {
-                    if(finalI == 9){
+                    if(finalI == 5){
                         throw new RuntimeException("出现异常");
                     }
                     return sysUserMapper.insert(lists.get(finalI));
@@ -52,8 +61,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
                 }
             }
             System.out.println("添加完毕");
+            con.commit();
         }catch (Exception e){
-            throw new RuntimeException("出现异常", e);
+            con.rollback();
+            throw new RuntimeException("出现异常3123123123", e);
+        }finally {
+            con.close();
+            sqlSession.close();
         }
     }
 }

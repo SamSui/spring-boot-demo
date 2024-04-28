@@ -5,6 +5,8 @@ import com.xisui.springbootdb.service.SysUserService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
+
 @RestController
 @RequestMapping("/user")
 public class SysUserController {
@@ -26,7 +28,7 @@ public class SysUserController {
         return userService.save(sysUser);
     }
     @GetMapping("/batch")
-    public String  getUser() {
+    public String  getUser() throws SQLException {
         userService.testBatch();
         return "success";
     }
