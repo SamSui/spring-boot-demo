@@ -28,8 +28,20 @@ public class SysUserController {
         return userService.save(sysUser);
     }
     @GetMapping("/batch")
-    public String  getUser() throws SQLException {
+    public String  batch() throws SQLException {
         userService.testBatch();
+        return "success";
+    }
+
+    @GetMapping("/batch2")
+    public String  batch2() throws SQLException {
+        userService.testBatch2();
+        return "success";
+    }
+
+    @GetMapping("/batch3")
+    public String  batch3() throws SQLException {
+        userService.testBatch3();
         return "success";
     }
 }

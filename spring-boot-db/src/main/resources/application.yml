@@ -20,6 +20,8 @@ spring:
       maxLifetime: 1800000
       connectionTimeout: 30000
       connectionTestQuery: SELECT 1
+      data-source-properties:
+        prepStmtCacheSqlLimit: 65535
 
 # MyBatis配置
 
@@ -46,4 +48,4 @@ jasypt:
     property:
       prefix: ENC(
       suffix: )
-debug: true
+debug: false

@@ -7,4 +7,6 @@ import java.sql.SQLException;
 
 public interface SysUserService extends IService<SysUser> {
     void testBatch() throws SQLException;
+    void testBatch2() throws SQLException;
+    void testBatch3() throws SQLException;
 }
