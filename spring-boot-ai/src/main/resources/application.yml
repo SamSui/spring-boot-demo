@@ -23,7 +23,7 @@ spring:
     ai:
       tongyi:
         # 配置你申请的api-key
-        apiKey: sk-d6b7c3122eef45208560a3774bd4cf68
+        apiKey: sk-xxxxxxx
         images:
           options:
             model: wanx-v1 # default: wanx-v1  文生图
