@@ -17,3 +17,20 @@ spring:
     openai:
       base-url: https://api.openai.com
       api-key: <api-key>
+---
+spring:
+  cloud:
+    ai:
+      tongyi:
+        # 配置你申请的api-key
+        apiKey: sk-d6b7c3122eef45208560a3774bd4cf68
+        images:
+          options:
+            model: wanx-v1 # default: wanx-v1  文生图
+        audio:
+          options:
+            enabled: false
+            model: sambert-zhichu-v1 # default: sambert-zhichu-v1
+        chat:
+          options:
+            model: qwen-1.8b-chat # default: qwen-turbo
