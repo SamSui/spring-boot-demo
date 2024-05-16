@@ -49,3 +49,11 @@ spring:
         username: admin
         password: admin123
 ---
+server: # 内嵌tomcat access log配置 和 打开 tomcat mbean 方式
+  tomcat:
+    basedir: "spring-boot-web"
+    accesslog:
+        enabled: true
+        pattern: "%t %a %r %s (%D microseconds)"
+    mbeanregistry:
+      enabled: true
