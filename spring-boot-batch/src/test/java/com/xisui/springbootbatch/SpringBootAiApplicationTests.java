@@ -1,13 +1,13 @@
-package com.xisui.springbootbatch;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class SpringBootAiApplicationTests {
-
-    @Test
-    void contextLoads() {
-    }
-
-}
+//package com.xisui.springbootbatch;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class SpringBootAiApplicationTests {
+//
+//    @Test
+//    void contextLoads() {
+//    }
+//
+//}

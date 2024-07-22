@@ -178,6 +178,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.3.1</version>
                 <configuration>
                     <skip>${it.skip}</skip>
                     <classesDirectory>${project.build.outputDirectory}</classesDirectory>
@@ -187,6 +188,27 @@
             <plugin>
                 <groupId>io.github.git-commit-id</groupId>
                 <artifactId>git-commit-id-maven-plugin</artifactId>
+                <version>9.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 生成git.properties文件 -->
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <!-- 文件格式可以是properties或者json -->
+                    <format>properties</format>
+                    <!-- 提交ID的生成模式 -->
+<!--                    <commitIdGenerationMode>full</commitIdGenerationMode>-->
+                    <!-- 自定义生成的Git属性 -->
+                    <customProperty>
+                        <name>git.branch</name>
+                        <value>${git.branch}</value>
+                    </customProperty>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
