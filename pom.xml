@@ -20,6 +20,7 @@
         <module>spring-boot-test</module>
         <module>spring-boot-ai</module>
         <module>spring-boot-batch</module>
+        <module>spring-boot-olama</module>
     </modules>
 
     <packaging>pom</packaging>

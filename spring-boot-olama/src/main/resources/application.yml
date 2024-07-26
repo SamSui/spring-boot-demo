@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: local
+#  datasource:
+#    url: jdbc:postgresql://127.0.0.1:5432/postgres
+#    username: postgres
+#    password: postgres
+#    url: jdbc:mysql://localhost:3306/dcdb?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&nullCatalogMeansCurrent=true&allowMultiQueries=true&rewriteBatchedStatements=true
+#    username: root
+#    password: 123456
+  ai:
+    ollama:
+      ## ollama服务器
+      base-url: http://10.8.7.219:11434
+      chat:
+        model: qwen2:7b
+#    openai:
+#      base-url: https://api.openai.com
+#      api-key: <api-key>
+---
+#spring:
+#  cloud:
+#    ai:
+#      tongyi:
+#        # 配置你申请的api-key
+#        apiKey: sk-xxxxxxx
+#        images:
+#          options:
+#            model: wanx-v1 # default: wanx-v1  文生图
+#        audio:
+#          options:
+#            enabled: false
+#            model: sambert-zhichu-v1 # default: sambert-zhichu-v1
+#        chat:
+#          options:
+#            model: qwen-1.8b-chat # default: qwen-turbo
