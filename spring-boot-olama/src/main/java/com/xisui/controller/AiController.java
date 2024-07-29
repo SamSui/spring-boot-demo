@@ -35,6 +35,9 @@ import java.util.Map;
 public class AiController {
     @Resource
     private OllamaChatClient chatClient;
+
+    @Resource
+    private OllamaApi ollamaApi;
 //
 //    private final AiService aiService ;
 //    public AiController(AiService aiService) {
@@ -68,6 +71,15 @@ public class AiController {
         });
 
         return Flux.just("success");
+    }
+
+
+    @GetMapping("/ollama/generate")
+    public Flux<Object> generate(String message) {
+        OllamaApi.GenerateRequest request = new OllamaApi.GenerateRequest("qwen2:7b", message, false);
+        OllamaApi.GenerateResponse resp = ollamaApi.generate(request);
+        System.out.println(resp.response());
+        return Flux.just(resp);
     }
 
 //    @PostMapping("/image")
