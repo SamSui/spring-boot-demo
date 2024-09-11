@@ -7,7 +7,7 @@ logging:
   config: classpath:log4j2.xml
 
 server:
-  port: 8088
+  port: 8988
 ---
 management:
   endpoints:
@@ -54,6 +54,6 @@ server: # 内嵌tomcat access log配置 和 打开 tomcat mbean 方式
     basedir: "spring-boot-web"
     accesslog:
         enabled: true
-        pattern: "%t %a %r %s (%D microseconds)"
+        pattern: '%{yyyy-MM-dd HH:mm:ss}t %a %A %m %s %D %b %I %U%q %{User-Agent}i'
     mbeanregistry:
       enabled: true
